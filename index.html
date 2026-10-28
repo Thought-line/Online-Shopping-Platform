@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f5f0">
+  <meta name="description" content="Browse the Everyday Market product catalog.">
+  <title>Everyday Market — Shop thoughtfully</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="products.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="announcement">Thoughtful finds for everyday life <span>·</span> A new way to shop</div>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="Everyday Market home"><span class="brand-mark">e</span><span>everyday<span class="brand-light">market</span></span></a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="#products">Shop all</a><a href="#categories">Categories</a><a href="#about">Our approach</a>
+    </nav>
+    <div class="header-actions">
+      <label class="header-search"><span class="sr-only">Search products</span><span aria-hidden="true">⌕</span><input id="header-search" type="search" placeholder="Search products…" autocomplete="off"></label>
+      <button class="cart-trigger" id="open-cart" type="button" aria-label="Open shopping cart">Bag <span id="cart-count">0</span></button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-line"></span> THE EVERYDAY EDIT</p>
+        <h1 id="hero-title">Good things.<br><em>Chosen well.</em></h1>
+        <p class="hero-description">Useful little upgrades, considered essentials, and things that make the everyday feel a bit more special.</p>
+        <a class="button button-dark" href="#products">Explore the collection <span aria-hidden="true">↗</span></a>
+        <div class="hero-note"><span class="note-dot"></span> A considered collection for everyday living</div>
+      </div>
+      <div class="hero-visual" role="img" aria-label="A curated arrangement of everyday home and lifestyle products">
+        <div class="hero-image hero-image-main"></div>
+        <div class="hero-image hero-image-detail"></div>
+        <div class="hero-stamp"><span>THE</span><strong>GOOD<br>STUFF</strong><span>VOL. 01</span></div>
+        <div class="hero-caption">A little less ordinary.</div>
+      </div>
+    </section>
+
+    <section class="benefit-strip" aria-label="Shopping values">
+      <div><span class="benefit-icon">✳</span><span><strong>Considered finds</strong><small>Picked for everyday use</small></span></div>
+      <div><span class="benefit-icon">↗</span><span><strong>Easy to explore</strong><small>Find your next favourite</small></span></div>
+      <div><span class="benefit-icon">♡</span><span><strong>Made for real life</strong><small>Useful, simple, thoughtful</small></span></div>
+    </section>
+
+    <section class="category-section section-wrap" id="categories">
+      <div class="section-heading"><div><p class="eyebrow">FIND YOUR THING</p><h2>Shop by <em>mood.</em></h2></div><p>From daily essentials to little upgrades,<br>start wherever you like.</p></div>
+      <div class="category-grid" id="category-grid" aria-label="Product categories">
+        <button class="category-tile category-home" data-category="Home" type="button"><span>01 / MAKE YOURSELF AT HOME</span><strong>Home & living <b>↗</b></strong></button>
+        <button class="category-tile category-tech" data-category="Electronics" type="button"><span>02 / SMARTER EVERYDAY</span><strong>Tech & gadgets <b>↗</b></strong></button>
+        <button class="category-tile category-style" data-category="Fashion" type="button"><span>03 / THE DAILY UNIFORM</span><strong>Style & accessories <b>↗</b></strong></button>
+        <button class="category-tile category-care" data-category="Beauty" type="button"><span>04 / A MOMENT FOR YOU</span><strong>Beauty & care <b>↗</b></strong></button>
+      </div>
+    </section>
+
+    <section class="products-section section-wrap" id="products">
+      <div class="section-heading product-heading"><div><p class="eyebrow">THE CURRENT COLLECTION</p><h2>Good finds, <em>right here.</em></h2></div><p id="result-count" aria-live="polite">Browse the collection</p></div>
+      <div class="product-toolbar">
+        <div class="filter-list" id="filter-list" aria-label="Filter products by category">
+          <button class="filter-chip active" type="button" data-category="All" aria-pressed="true">All products</button>
+          <button class="filter-chip" type="button" data-category="Home" aria-pressed="false">Home</button>
+          <button class="filter-chip" type="button" data-category="Electronics" aria-pressed="false">Electronics</button>
+          <button class="filter-chip" type="button" data-category="Fashion" aria-pressed="false">Fashion</button>
+          <button class="filter-chip" type="button" data-category="Beauty" aria-pressed="false">Beauty</button>
+          <button class="filter-chip" type="button" data-category="Accessories" aria-pressed="false">Accessories</button>
+        </div>
+        <label class="sort-control">Sort by <select id="sort-select"><option value="featured">Featured</option><option value="price-asc">Price: low to high</option><option value="price-desc">Price: high to low</option><option value="name">Name: A to Z</option></select></label>
+      </div>
+      <div class="product-grid" id="product-grid" aria-live="polite"></div>
+      <div class="empty-state" id="empty-state" hidden><span>⌕</span><h3>No finds this time.</h3><p>Try another search or choose a different category.</p><button class="button button-outline" id="clear-filters" type="button">Clear filters</button></div>
+    </section>
+
+    <section class="newsletter section-wrap" id="about">
+      <div><p class="eyebrow">A NOTE FROM US</p><h2>Everyday, a little <em>better.</em></h2><p>We're building a collection of practical, lovely things worth making room for.</p></div>
+      <a href="#products" class="button button-light">Find your next favourite <span aria-hidden="true">↗</span></a>
+      <span class="newsletter-decoration" aria-hidden="true">e.</span>
+    </section>
+  </main>
+
+  <footer class="site-footer"><a class="brand brand-footer" href="#"><span class="brand-mark">e</span><span>everyday<span class="brand-light">market</span></span></a><p>Good things for the everyday.</p><small>© <span id="year"></span> Everyday Market. Storefront foundation.</small></footer>
+
+  <div class="overlay" id="cart-overlay" hidden></div>
+  <aside class="cart-panel" id="cart-panel" aria-labelledby="cart-title" aria-modal="true" role="dialog" hidden>
+    <div class="cart-header"><div><p class="eyebrow">YOUR SELECTION</p><h2 id="cart-title">Shopping bag <span id="cart-title-count">(0)</span></h2></div><button class="icon-button" id="close-cart" type="button" aria-label="Close shopping cart">×</button></div>
+    <div class="cart-items" id="cart-items"></div>
+    <div class="cart-footer"><div class="subtotal-row"><span>Subtotal</span><strong id="cart-subtotal">₹0</strong></div><p class="cart-disclaimer">Delivery, taxes, and checkout will be configured when the backend is added. No payment is collected on this version.</p><button class="button button-dark checkout-button" id="checkout-button" type="button">Checkout setup <span aria-hidden="true">↗</span></button><button class="continue-shopping" id="continue-shopping" type="button">Continue exploring</button></div>
+  </aside>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <noscript><p class="noscript">Please enable JavaScript to browse and use the shopping cart.</p></noscript>
+</body>
+</html>
