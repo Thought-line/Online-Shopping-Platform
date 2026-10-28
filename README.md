@@ -1,5 +1,5 @@
 # Online Shopping Platform
-
+Implement product management for OSP-3
 ## Project Overview
 Online Shopping Platform is a sample software project designed to manage products, customers, shopping carts, and orders. This repository is used to test GitHub and Jira integration with PulseCheck.
 
